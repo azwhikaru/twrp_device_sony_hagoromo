@@ -1,0 +1,9 @@
+Kernel Configuration Information
+
+The kernel is configured with following defconfig.
+
+linux-kernel-3.10.26.tar.gz
+arch/arm/configs/BBDMP2_linux_debug_defconfig
+
+Please compile using this configuration.
+

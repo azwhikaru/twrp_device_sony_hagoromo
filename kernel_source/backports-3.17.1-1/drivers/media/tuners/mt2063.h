@@ -1,0 +1,41 @@
+/*
+* Copyright (C) 2011-2015 MediaTek Inc.
+*
+* This program is free software: you can redistribute it and/or modify it under the terms of the
+* GNU General Public License version 2 as published by the Free Software Foundation.
+*
+* This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+* without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* See the GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License along with this program.
+* If not, see <http://www.gnu.org/licenses/>.
+*/
+#ifndef __MT2063_H__
+#define __MT2063_H__
+
+#include "dvb_frontend.h"
+
+struct mt2063_config {
+	u8 tuner_address;
+	u32 refclock;
+};
+
+#if IS_ENABLED(CPTCFG_MEDIA_TUNER_MT2063)
+struct dvb_frontend *mt2063_attach(struct dvb_frontend *fe,
+				   struct mt2063_config *config,
+				   struct i2c_adapter *i2c);
+
+#else
+
+static inline struct dvb_frontend *mt2063_attach(struct dvb_frontend *fe,
+				   struct mt2063_config *config,
+				   struct i2c_adapter *i2c)
+{
+	printk(KERN_WARNING "%s: Driver disabled by Kconfig\n", __func__);
+	return NULL;
+}
+
+#endif /* CONFIG_DVB_MT2063 */
+
+#endif /* __MT2063_H__ */

@@ -1,0 +1,22 @@
+#
+# Copyright (C) 2011-2015 MediaTek Inc.
+#
+# This program is free software: you can redistribute it and/or modify it under the terms of the
+# GNU General Public License version 2 as published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+# without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with this program.
+# If not, see <http://www.gnu.org/licenses/>.
+#
+include $(srctree)/drivers/misc/mediatek/Makefile.custom
+
+obj-y += eeprom.o
+
+ccflags-y += -I$(src)/inc -I$(srctree)/include/linux/camera
+
+ifeq ($(CONFIG_MTK_EEPROM_DUMMYEEPROM_SUPPORT),y)
+eeprom-y += dummy_eeprom/dummy_eeprom.o
+endif

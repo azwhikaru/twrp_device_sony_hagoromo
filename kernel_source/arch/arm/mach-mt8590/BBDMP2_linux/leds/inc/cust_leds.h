@@ -1,0 +1,36 @@
+/*
+ * Copyright 2016 Sony Corporation
+ * File changed on 2016-01-20
+ */
+#ifndef _CUST_LEDS_H
+#define _CUST_LEDS_H
+
+#include <mach/mt_typedefs.h>
+enum mt65xx_led_type
+{
+#ifdef CONFIG_ARCH_MT8590_ICX
+    MT65XX_LED_TYPE_RED_1 = 0,
+    MT65XX_LED_TYPE_GREEN_1,
+    MT65XX_LED_TYPE_RED_2,
+    MT65XX_LED_TYPE_GREEN_2,
+    MT65XX_LED_TYPE_LCD,
+    MT65XX_LED_TYPE_RED,
+    MT65XX_LED_TYPE_GREEN,
+    MT65XX_LED_TYPE_BLUE,
+    MT65XX_LED_TYPE_TOTAL,
+#else
+    MT65XX_LED_TYPE_RED = 0,
+    MT65XX_LED_TYPE_GREEN,
+    MT65XX_LED_TYPE_BLUE,
+    MT65XX_LED_TYPE_JOGBALL,
+    MT65XX_LED_TYPE_KEYBOARD,
+    MT65XX_LED_TYPE_BUTTON, 
+    MT65XX_LED_TYPE_LCD,
+    MT65XX_LED_TYPE_TOTAL,
+#endif /* CONFIG_ARCH_MT8590_ICX */
+};
+
+
+
+#endif
+

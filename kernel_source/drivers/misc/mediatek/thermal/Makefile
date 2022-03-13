@@ -1,0 +1,28 @@
+#
+# Copyright (C) 2011-2015 MediaTek Inc.
+#
+# This program is free software: you can redistribute it and/or modify it under the terms of the
+# GNU General Public License version 2 as published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+# without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with this program.
+# If not, see <http://www.gnu.org/licenses/>.
+#
+ccflags-y += -I$(srctree)
+obj-$(CONFIG_THERMAL) += mtk_thermal_monitor.o
+obj-$(CONFIG_THERMAL) += mtk_cooler_shutdown.o
+ifeq ($(CONFIG_MTK_LEDS), y)
+    # setMaxbrightness() defined in mediatek/kernel/drivers/leds/leds_drv.c only built when CONFIG_MTK_LEDS is set
+    obj-$(CONFIG_THERMAL) += mtk_cooler_backlight.o 
+endif
+obj-$(CONFIG_THERMAL) += mtk_cooler_kshutdown.o
+#obj-$(CONFIG_THERMAL) += mtk_cooler_spkrvol.o
+#obj-$(CONFIG_THERMAL) += mtk_cooler_dropcall.o
+#obj-$(CONFIG_THERMAL) += mtk_cooler_cam.o
+#obj-$(CONFIG_THERMAL) += mtk_cooler_vrt.o
+
+obj-y += $(subst ",,$(CONFIG_MTK_PLATFORM))/
+

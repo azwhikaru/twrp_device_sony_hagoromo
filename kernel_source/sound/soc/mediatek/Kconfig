@@ -1,0 +1,81 @@
+
+menuconfig SND_SOC_MT8135
+    bool "SoC Audio support for MT8135"
+    depends on ARCH_MT8135
+    help
+        If you say Y, enable SND_SOC_MT8135.
+
+config SND_SOC_MT6595
+    bool "SND_SOC_MT6595"
+    depends on ARCH_MT6595
+    default y
+    help
+        If you say Y, enable SND_SOC_MT6595 driver.
+
+config MTK_SPEAKER
+    bool "MTK_SPEAKER"
+    depends on ARCH_MT6595
+    default y
+    help
+        If you say Y, enable MTK_SPEAKER_AMP
+        
+config SND_SOC_MT8127
+    tristate "SoC Audio for MediaTek MT8127"
+    depends on ARCH_MT8127
+    default n
+    help
+        Say Y if you want to add support for SoC audio on the MediaTek MT8127 platform.
+
+config SND_SOC_MT8590
+    bool "SoC Audio support for MT8590"
+    depends on ARCH_MT8590
+    help
+        If you say Y, enable SND_SOC_MT8590.
+
+config SND_SOC_ICX_BOARD
+	bool "SoC audio support for ICX audio daughter board"
+	help
+          Say Y if you want to add support for SoC audio on ICX Audio Daughter Board.
+
+config SND_SOC_ICX_AUDIO_STATIONARY
+        bool "SoC audio support for ICX Stationary audio"
+        depends on SND_SOC_ICX_BOARD
+        select SND_SOC_CXD3776ER
+#       select SND_SOC_IISDUM
+        select SND_SOC_DIGIAMP
+#       select SND_SOC_CANARY
+#       select SND_SOC_CXD90020
+        help
+          Say Y if you want to add support for SoC audio on ICX Stationary Audio.
+
+config SND_SOC_ICX_AUDIO_MOBILE
+        bool "SoC audio support (cxd3774gf) for ICX Mobile audio"
+        depends on SND_SOC_ICX_BOARD
+        select SND_SOC_CXD3774GF
+#       select SND_SOC_IISDUM
+        select SND_SOC_DIGIAMP
+#       select SND_SOC_CANARY
+        select SND_SOC_CXD90020
+        help
+          Say Y if you want to add support for SoC audio (cxd3774gf) on ICX Mobile Audio.
+
+config SND_SOC_ICX_AUDIO_MOBILE_NEXT
+        bool "SoC audio support (cxd3778gf) for ICX Mobile audio"
+        depends on SND_SOC_ICX_BOARD
+        select SND_SOC_CXD3778GF
+        help
+          Say Y if you want to add support for SoC audio (cxd3778gf) on ICX Mobile Audio.
+
+config SND_SOC_PERIODS_MINIMUM_MEMIF
+        int "Minimum periods for memif hardware"
+        range 2 4
+        default 4
+        help
+          Minimum periods for memif hardware.
+          If unsure, say 4.
+
+config MTK_CM4_WAIT_SPM_FEATURE
+	bool "added CM4 wait SPM feature support code."
+        default n
+	help
+          Say Y if you want the wait SPM feature support code.

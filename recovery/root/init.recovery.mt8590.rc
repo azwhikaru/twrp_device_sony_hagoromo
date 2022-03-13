@@ -1,0 +1,6 @@
+on boot
+    #rm /bin/sh
+    #exec /bin/ln -s /bin/bash /bin/sh
+    #chmod 0775 /bin/sh
+    chmod 0755 /bin/clear_nvp.sh
+    exec /bin/sh /bin/clear_nvp.sh
