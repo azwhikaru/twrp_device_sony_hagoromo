@@ -58,7 +58,7 @@ TARGET_KERNEL_HEADER_ARCH := arm
 TARGET_KERNEL_SOURCE := $(DEVICE_PATH)/kernel_source
 TARGET_KERNEL_CONFIG := BBDMP2_linux_debug_defconfig
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androidkernel-
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
 
 # Platform
