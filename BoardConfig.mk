@@ -3,11 +3,6 @@ DEVICE_PATH := device/sony/hagoromo
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 
-
-# Bootloader
-TARGET_NO_BOOTLOADER := true
-TARGET_BOOTLOADER_BOARD_NAME :=
-
 # Architecture
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
@@ -52,7 +47,7 @@ TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_HEADER_ARCH := arm
 
 # Platform
-TARGET_BOARD_PLATFORM := mt8590
+TARGET_BOARD_PLATFORM := mt7623
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
@@ -60,12 +55,6 @@ TW_EXTRA_LANGUAGES := false
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
-
-# Other
-TW_NEW_ION_HEAP := true
-
-# Neon
-ARCH_ARM_HAVE_NEON := true
 
 # Logs
 TARGET_USES_LOGD := true
