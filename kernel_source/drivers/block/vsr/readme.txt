@@ -1,1 +1,0 @@
-This library is about virtual sr0 driver.
